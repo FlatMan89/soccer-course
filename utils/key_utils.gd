@@ -8,13 +8,17 @@ const ACTIONS_MAP: Dictionary = {
 		Action.LEFT: "p1_left",
 		Action.RIGHT: "p1_right",
 		Action.DOWN: "p1_down",
-		Action.UP: "p1_up"
+		Action.UP: "p1_up",
+		Action.PASS: "p1_pass",
+		Action.SHOOT: "p1_shoot",
 	},
 	Player.ControlScheme.P2: {
 		Action.LEFT: "p2_left",
 		Action.RIGHT: "p2_right",
 		Action.DOWN: "p2_down",
-		Action.UP: "p2_up"
+		Action.UP: "p2_up",
+		Action.PASS: "p2_pass",
+		Action.SHOOT: "p2_shoot",
 	},
 }
 
