@@ -80,7 +80,7 @@ _data = {
 &"RESET": SubResource("Animation_rp718"),
 &"idle": SubResource("Animation_yewv4"),
 &"run": SubResource("Animation_76oj4"),
-&"track": SubResource("Animation_dyp2m")
+&"tackle": SubResource("Animation_dyp2m")
 }
 
 [node name="Player" type="CharacterBody2D"]
