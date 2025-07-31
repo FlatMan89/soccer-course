@@ -2,10 +2,13 @@ class_name Player
 extends CharacterBody2D
 
 enum ControlScheme { CPU, P1, P2 }
-enum State { MOVING, TACKLING, RECOVERING }
+# 玩家状态 移动，铲球，恢复，准备射门，射门
+enum State { MOVING, TACKLING, RECOVERING, PREPPING_SHOT, SHOOTING }
 
 @export var control_scheme: ControlScheme
 @export var speed: float = 80
+@export var power: float
+@export var ball: Ball
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var sprite_2d: Sprite2D = %Sprite2D
@@ -20,6 +23,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	flip_sprites()
+	
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 func switch_state(state: State) -> void:
@@ -49,3 +54,6 @@ func flip_sprites() -> void:
 		sprite_2d.flip_h = false
 	elif velocity.x < 0:
 		sprite_2d.flip_h = true
+		
+func has_ball() -> bool:
+	return ball.carrer == self
